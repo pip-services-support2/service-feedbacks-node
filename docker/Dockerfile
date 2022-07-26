@@ -32,7 +32,6 @@ ENV MONGO_DB app
 
 # Expose http and grpc ports
 EXPOSE 8080
-EXPOSE 8090
 
 # Set container entrypoint
 ENTRYPOINT [ "node", "./bin/main.js" ]
