@@ -9,7 +9,7 @@ import { PartyReferenceV1 } from '../../../src/data/version1/PartyReferenceV1';
 import { FeedbackV1 } from '../../../src/data/version1/FeedbackV1';
 import { FeedbacksMemoryPersistence } from '../../../src/persistence/FeedbacksMemoryPersistence';
 import { FeedbacksController } from '../../../src/logic/FeedbacksController';
-import { FeedbacksHttpServiceV1 } from '../../../src/services/version1/FeedbacksHttpServiceV1';
+import { FeedbacksCommandableHttpServiceV1 } from '../../../src/services/version1/FeedbacksCommandableHttpServiceV1';
 
 let httpConfig = ConfigParams.fromTuples(
     "connection.protocol", "http",
@@ -33,8 +33,8 @@ let USER2 = <PartyReferenceV1>{
     email: 'admin@digitallivingsoftware.com'
 };
 
-suite('FeedbacksHttpServiceV1', ()=> {
-    let service: FeedbacksHttpServiceV1;
+suite('FeedbacksCommandableHttpServiceV1', ()=> {
+    let service: FeedbacksCommandableHttpServiceV1;
 
     let rest: any;
 
@@ -42,13 +42,13 @@ suite('FeedbacksHttpServiceV1', ()=> {
         let persistence = new FeedbacksMemoryPersistence();
         let controller = new FeedbacksController();
 
-        service = new FeedbacksHttpServiceV1();
+        service = new FeedbacksCommandableHttpServiceV1();
         service.configure(httpConfig);
 
         let references: References = References.fromTuples(
             new Descriptor('service-feedbacks', 'persistence', 'memory', 'default', '1.0'), persistence,
             new Descriptor('service-feedbacks', 'controller', 'default', 'default', '1.0'), controller,
-            new Descriptor('service-feedbacks', 'service', 'http', 'default', '1.0'), service
+            new Descriptor('service-feedbacks', 'service', 'commandable-http', 'default', '1.0'), service
         );
         controller.setReferences(references);
         service.setReferences(references);

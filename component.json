@@ -2,7 +2,7 @@
     "name": "service-feedbacks-node",
     "type": "microservice",
     "language": "node",
-    "version": "pipdevs",
+    "version": "1.0.0",
     "build": 0,
     "registry": "pipdevs",
     "artifacts": [

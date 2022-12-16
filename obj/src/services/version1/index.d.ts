@@ -1,1 +1,1 @@
-export { FeedbacksHttpServiceV1 } from './FeedbacksHttpServiceV1';
+export { FeedbacksCommandableHttpServiceV1 } from './FeedbacksCommandableHttpServiceV1';

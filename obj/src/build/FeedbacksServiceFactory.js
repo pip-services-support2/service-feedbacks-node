@@ -7,7 +7,7 @@ const FeedbacksMongoDbPersistence_1 = require("../persistence/FeedbacksMongoDbPe
 const FeedbacksFilePersistence_1 = require("../persistence/FeedbacksFilePersistence");
 const FeedbacksMemoryPersistence_1 = require("../persistence/FeedbacksMemoryPersistence");
 const FeedbacksController_1 = require("../logic/FeedbacksController");
-const FeedbacksHttpServiceV1_1 = require("../services/version1/FeedbacksHttpServiceV1");
+const FeedbacksCommandableHttpServiceV1_1 = require("../services/version1/FeedbacksCommandableHttpServiceV1");
 class FeedbacksServiceFactory extends pip_services3_components_nodex_1.Factory {
     constructor() {
         super();
@@ -15,7 +15,7 @@ class FeedbacksServiceFactory extends pip_services3_components_nodex_1.Factory {
         this.registerAsType(FeedbacksServiceFactory.FilePersistenceDescriptor, FeedbacksFilePersistence_1.FeedbacksFilePersistence);
         this.registerAsType(FeedbacksServiceFactory.MongoDbPersistenceDescriptor, FeedbacksMongoDbPersistence_1.FeedbacksMongoDbPersistence);
         this.registerAsType(FeedbacksServiceFactory.ControllerDescriptor, FeedbacksController_1.FeedbacksController);
-        this.registerAsType(FeedbacksServiceFactory.HttpServiceDescriptor, FeedbacksHttpServiceV1_1.FeedbacksHttpServiceV1);
+        this.registerAsType(FeedbacksServiceFactory.CmdHttpServiceDescriptor, FeedbacksCommandableHttpServiceV1_1.FeedbacksCommandableHttpServiceV1);
     }
 }
 exports.FeedbacksServiceFactory = FeedbacksServiceFactory;
@@ -24,5 +24,5 @@ FeedbacksServiceFactory.MemoryPersistenceDescriptor = new pip_services3_commons_
 FeedbacksServiceFactory.FilePersistenceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-feedbacks", "persistence", "file", "*", "1.0");
 FeedbacksServiceFactory.MongoDbPersistenceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-feedbacks", "persistence", "mongodb", "*", "1.0");
 FeedbacksServiceFactory.ControllerDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-feedbacks", "controller", "default", "*", "1.0");
-FeedbacksServiceFactory.HttpServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-feedbacks", "service", "http", "*", "1.0");
+FeedbacksServiceFactory.CmdHttpServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-feedbacks", "service", "commandable-http", "*", "1.0");
 //# sourceMappingURL=FeedbacksServiceFactory.js.map
