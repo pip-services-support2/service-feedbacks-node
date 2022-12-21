@@ -113,7 +113,7 @@ Example of microservice configuration
 - descriptor: "service-feedbacks:persistence:file:default:1.0"
   path: "./data/feedbacks.json"
 
-- descriptor: "pip-services-attachments:client:http:default:1.0"
+- descriptor: "pip-services-attachments:client:commandable-http:default:1.0"
   connection:
     protocol: "http"
     host: "0.0.0.0"
@@ -121,7 +121,7 @@ Example of microservice configuration
 
 - descriptor: "service-feedbacks:controller:default:default:1.0"
 
-- descriptor: "service-feedbacks:service:http:default:1.0"
+- descriptor: "service-feedbacks:service:commandable-http:default:1.0"
   connection:
     protocol: "http"
     host: "0.0.0.0"
